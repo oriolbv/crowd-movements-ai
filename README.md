@@ -1,2 +1,2 @@
 # crowd-movements-ai
-Different Crowd control algorithms examples for Unity3D.
+Different crowd control algorithms examples for Unity3D (crowd, flocking and behaviour trees)
