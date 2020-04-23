@@ -1,19 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PedestrianBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private NavMeshAgent agent;
+
     void Start()
     {
-        Material newMat = Resources.Load("RedMaterial", typeof(Material)) as Material;
-        this.GetComponent<Renderer>().material = newMat;
+        agent = GetComponent<NavMeshAgent>();    
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        RaycastHit hit;
+        Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(camRay, out hit, 100))
+        {
+            agent.destination = hit.point;
+        }
     }
 }
