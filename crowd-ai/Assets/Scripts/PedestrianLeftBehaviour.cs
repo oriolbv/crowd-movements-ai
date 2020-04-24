@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PedestrianBehaviour : MonoBehaviour
+public class PedestrianLeftBehaviour : MonoBehaviour
 {
     private NavMeshAgent agent;
 
