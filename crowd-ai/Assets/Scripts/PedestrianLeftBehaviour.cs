@@ -14,11 +14,6 @@ public class PedestrianLeftBehaviour : MonoBehaviour
 
     void Update()
     {
-        RaycastHit hit;
-        Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(camRay, out hit, 100))
-        {
-            agent.destination = hit.point;
-        }
+        agent.destination = transform.position.x + 10;
     }
 }
