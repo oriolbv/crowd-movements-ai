@@ -6,14 +6,16 @@ using UnityEngine.AI;
 public class PedestrianLeftBehaviour : MonoBehaviour
 {
     private NavMeshAgent agent;
+    public GameObject goal;
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();    
+        agent = GetComponent<NavMeshAgent>();
+        agent.speed = Random.Range(1f, 10.0f);
     }
 
     void Update()
     {
-        agent.destination = transform.position.x + 10;
+        agent.destination = goal.transform.position;
     }
 }

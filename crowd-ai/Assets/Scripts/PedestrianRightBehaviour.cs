@@ -6,19 +6,16 @@ using UnityEngine.AI;
 public class PedestrianRightBehaviour : MonoBehaviour
 {
     private NavMeshAgent agent;
+    public GameObject goal;
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();    
+        agent = GetComponent<NavMeshAgent>();
+        agent.speed = Random.Range(1f, 10.0f);
     }
 
     void Update()
     {
-        RaycastHit hit;
-        Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(camRay, out hit, 100))
-        {
-            agent.destination = hit.point;
-        }
+        agent.destination = goal.transform.position;
     }
 }
