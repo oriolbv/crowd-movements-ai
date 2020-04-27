@@ -34,6 +34,7 @@ public class TankManager
         {
             renderers[i].material.color = m_PlayerColor;
         }
+        m_Instance.gameObject.name ="GAAAAAAAAAAAAAS";
     }
 
 
