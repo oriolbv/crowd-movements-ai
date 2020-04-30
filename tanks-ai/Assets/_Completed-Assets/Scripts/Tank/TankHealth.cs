@@ -87,5 +87,21 @@ namespace Complete
             // Turn the tank off.
             gameObject.SetActive (false);
         }
+
+        void OnCollisionEnter(Collision collision)
+    {
+        //Check for a match with the specified name on any GameObject that collides with your GameObject
+        if (collision.gameObject.name == "Tank_1" || collision.gameObject.name == "Tank_2")
+        {
+            Rigidbody targetRigidbody = this.GetComponent<Rigidbody> ();
+            Debug.Log(targetRigidbody);
+            TankHealth targetHealth = targetRigidbody.GetComponent<TankHealth> ();
+
+            // Deal this damage to the tank.
+            targetHealth.TakeDamage (100.0f);
+            Debug.Log("Holi");
+        }
+    }
+
     }
 }
